@@ -1,6 +1,7 @@
 /*.gz
 /*.iso
 /*.img
+/*.tar
 /mini/*.gz
 /mini/*.iso
 /mini/*.img
