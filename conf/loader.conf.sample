@@ -5,7 +5,7 @@
 # Custom mfsbsd variables
 #
 # Set all auto-detected interfaces to DHCP
-#mfsbsd.autodhcp="YES"
+mfsbsd.autodhcp="NO"
 #
 # Define a new root password
 #mfsbsd.rootpw="foobar"
@@ -21,10 +21,10 @@ mfsbsd.rootpwhash="%6$ljfMVeRYdWTjTIPl%QTZLz89vbONbgDm55nJBo7ZzptS7o.072GejGiolC
 #mfsbsd.hostname="mfsbsd"
 #
 # List of interfaces to be set
-#mfsbsd.interfaces="em0 em1"
+mfsbsd.interfaces="igb0"
 #
 # Individual configuration of each interface
-#mfsbsd.ifconfig_em0="DHCP"
+mfsbsd.ifconfig_igb0="DHCP"
 #mfsbsd.ifconfig_em1="DHCP"
 #
 # List of special interfaces to be created
