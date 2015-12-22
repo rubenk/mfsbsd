@@ -12,7 +12,7 @@
 #
 # Alternatively define a root password hash like in master.passwd
 # NOTICE: replace '$' characters with '%'
-#mfsbsd.rootpwhash=""
+mfsbsd.rootpwhash="%6$ljfMVeRYdWTjTIPl%QTZLz89vbONbgDm55nJBo7ZzptS7o.072GejGiolCn8msbQOsEIFyQVhQux5UhwqXdcAQAq0tyg1PPcMO2NHD."
 #
 # Add additional nameservers here
 #mfsbsd.nameservers="192.168.1.1 192.168.1.2"
