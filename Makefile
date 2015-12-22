@@ -38,7 +38,7 @@ PACKAGESDIR?=packages
 CUSTOMFILESDIR=customfiles
 TOOLSDIR=tools
 PRUNELIST?=${TOOLSDIR}/prunelist
-PKG_STATIC?=${TOOLSDIR}/pkg-static
+PKG_STATIC?=/usr/local/sbin/pkg-static
 #
 # Program defaults
 #
