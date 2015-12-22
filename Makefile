@@ -393,7 +393,7 @@ ${WRKDIR}/.config_done:
 .if defined(ROOTPW)
 	${_v}echo ${ROOTPW} | ${PW} -V ${_DESTDIR}/etc usermod root -h 0
 .endif
-	${_v}echo PermitRootLogin yes >> ${_DESTDIR}/etc/ssh/sshd_config
+	${_v}echo PermitRootLogin without-password >> ${_DESTDIR}/etc/ssh/sshd_config
 .if exists(${CFGDIR}/hosts)
 	${_v}${INSTALL} -m 0644 ${CFGDIR}/hosts ${_DESTDIR}/etc/hosts
 .elif exists(${CFGDIR}/hosts.sample)
