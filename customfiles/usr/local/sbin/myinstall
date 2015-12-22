@@ -1,0 +1,21 @@
+#!/bin/sh
+disks="$(sysctl -n kern.disks)"
+
+if [ -z "$disks" ]; then
+	echo "No disks found" >&2
+	exit 1
+fi
+set -- $disks
+first_disk="$1"
+
+
+echo PARTITIONS="$first_disk" > /etc/installerconfig
+export DISTRIBUTIONS="base.txz kernel.txz"
+export BSDINSTALL_DISTDIR="/tmp"
+export BSDINSTALL_DISTSITE="http://ftp.nl.freebsd.org/pub/FreeBSD/releases/$(uname -m)/$(uname -r)"
+
+# download tarballs to tmp
+bsdinstall distfetch || exit 1
+
+# run unattended install
+bsdinstall script /etc/installerconfig
