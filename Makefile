@@ -78,9 +78,7 @@ BSDLABEL=bsdlabel
 DOFS=${TOOLSDIR}/doFS.sh
 SCRIPTS=mdinit mfsbsd interfaces packages
 BOOTMODULES=ums
-MFSMODULES=geom_mirror geom_nop opensolaris zfs ext2fs snp smbus ipmi ntfs nullfs tmpfs \
-	aesni crypto cryptodev geom_eli
-#
+MFSMODULES=opensolaris zfs nullfs tmpfs dtrace
 
 .if defined(V)
 _v=
