@@ -377,9 +377,6 @@ ${WRKDIR}/.config_done:
 		${INSTALL} -d -m 0700 ${_DESTDIR}/root/.ssh; \
 		${INSTALL} ${CFGDIR}/authorized_keys ${_DESTDIR}/root/.ssh/; \
 	fi
-	${_v}${MKDIR} ${_DESTDIR}/root/bin
-	${_v}${INSTALL} ${TOOLSDIR}/zfsinstall ${_DESTDIR}/root/bin
-	${_v}${INSTALL} ${TOOLSDIR}/destroygeom ${_DESTDIR}/root/bin
 	${_v}for SCRIPT in ${SCRIPTS}; do \
 		${INSTALL} -m 0555 ${SCRIPTSDIR}/$${SCRIPT} ${_DESTDIR}/etc/rc.d/; \
 	done
