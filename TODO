@@ -1,0 +1,5 @@
+Configure locale in /etc/login.conf
+Prune unused locales
+Prune unused timezones
+
+Stuff in /boot is stored twice, once on the iso and once in the mfsroot
