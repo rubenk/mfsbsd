@@ -1,3 +1,4 @@
+etc/rc.d/nsswitch
 usr/bin/c++
 usr/bin/c++filt
 usr/bin/g++
