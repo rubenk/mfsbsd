@@ -78,7 +78,10 @@ BSDLABEL=bsdlabel
 DOFS=${TOOLSDIR}/doFS.sh
 SCRIPTS=mdinit mfsbsd interfaces packages
 BOOTMODULES=ums
-MFSMODULES=opensolaris zfs nullfs tmpfs dtrace
+MFSMODULES=opensolaris zfs nullfs tmpfs dtrace \
+	dtraceall dtmalloc fasttrap fbt dtnfscl \
+	lockstat sdt systrace systrace_freebsd32 \
+	profile
 
 .if defined(V)
 _v=
