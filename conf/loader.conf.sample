@@ -58,4 +58,4 @@ kern.vty="vt"
 hw.vga.textmode="0"
 autoboot_delay="5"
 boot_mute="1"
-
+loader_logo="beastie"
