@@ -63,7 +63,7 @@ fi
 gpart create -s gpt ${unit}
 gpart add -t freebsd-boot -a 4k -l boot -s 512K ${unit}
 gpart bootcode -b ${BOOTDIR}/pmbr -p ${BOOTDIR}/gptboot -i 1 ${unit}
-gpart add -t freebsd-ufs -l rootfs ${unit}
+gpart add -t freebsd-ufs -a 1m -l rootfs ${unit}
 
 ${TIME} makefs -B little ${TMPIMG} ${FSPROTO}
 ${TIME} dd if=${TMPIMG} of=/dev/${unit}p2 bs=128k
