@@ -553,15 +553,7 @@ ${GCEFILE}:
 iso: install prune config genkeys customfiles boot compress-usr mfsroot fbsddist ${ISOIMAGE}
 ${ISOIMAGE}:
 	@echo -n "Creating ISO image ..."
-.if defined(USE_MKISOFS)
-. if !exists(${MKISOFS})
-	@echo "${MKISOFS} is missing, please install sysutils/cdrtools first"; exit 1
-. else
-	${_v}${MKISOFS} -b boot/cdboot -no-emul-boot -r -J -V mfsBSD -o ${ISOIMAGE} ${WRKDIR}/disk > /dev/null 2> /dev/null
-. endif
-.else
 	${_v}${MAKEFS} -t cd9660 -o rockridge,bootimage=i386\;/boot/cdboot,no-emul-boot,label=mfsBSD ${ISOIMAGE} ${WRKDIR}/disk
-.endif
 	@echo " done"
 	${_v}${LS} -l ${ISOIMAGE}
 
