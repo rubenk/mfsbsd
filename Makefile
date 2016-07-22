@@ -527,15 +527,7 @@ ${WRKDIR}/.fbsddist_done:
 image: install prune config genkeys customfiles boot compress-usr mfsroot fbsddist ${IMAGE}
 ${IMAGE}:
 	@echo -n "Creating image file ..."
-.if defined(BSDPART)
-	${_v}${MKDIR} ${WRKDIR}/mnt ${WRKDIR}/trees/base/boot
-	${_v}${INSTALL} -m 0444 ${WRKDIR}/disk/boot/boot ${WRKDIR}/trees/base/boot/
-	${_v}${DOFS} ${BSDLABEL} "" ${WRKDIR}/disk.img ${WRKDIR} ${WRKDIR}/mnt 0 ${WRKDIR}/disk 80000 auto > /dev/null 2> /dev/null
-	${_v}${RM} -rf ${WRKDIR}/mnt ${WRKDIR}/trees
-	${_v}${MV} ${WRKDIR}/disk.img ${.TARGET}
-.else
 	${_v}${TOOLSDIR}/do_gpt.sh ${.TARGET} ${WRKDIR}/disk 0 ${_ROOTDIR}/boot ${VERB}
-.endif
 	@echo " done"
 	${_v}${LS} -l ${.TARGET}
 
