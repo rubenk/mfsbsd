@@ -460,8 +460,8 @@ ${WRKDIR}/.boot_done:
 	${_v}${RM} -f ${_BOOTDIR}/kernel/kernel.debug
 	${_v}${CP} -rp ${_BOOTDIR}/kernel ${WRKDIR}/disk/boot
 	${_v}${CP} -rp ${_DESTDIR}/boot.config ${WRKDIR}/disk
-.for FILE in boot defaults device.hints loader loader.help *.rc *.4th
-	${_v}${CP} -rp ${_DESTDIR}/boot/${FILE} ${WRKDIR}/disk/boot
+.for FILE in boot defaults device.hints loader loader.efi loader.help *.rc *.4th
+	${_v}${CP} -vrp ${_DESTDIR}/boot/${FILE} ${WRKDIR}/disk/boot
 .endfor
 	${_v}${RM} -rf ${WRKDIR}/disk/boot/kernel/*.ko ${WRKDIR}/disk/boot/kernel/*.symbols
 .if defined(DEBUG)
