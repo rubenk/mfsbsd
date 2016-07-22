@@ -65,7 +65,6 @@ UNAME=/usr/bin/uname
 BZIP2=/usr/bin/bzip2
 XZ=/usr/bin/xz
 MAKEFS=/usr/sbin/makefs
-MKISOFS=/usr/local/bin/mkisofs
 SSHKEYGEN=/usr/bin/ssh-keygen
 SYSCTL=/sbin/sysctl
 PKG=/usr/local/sbin/pkg
